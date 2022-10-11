@@ -1,8 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+function App() {
+const [things , setThings] = React.useState( ["Thing1"] )
+
+const arrElements = things.map(item => <p key={item}>{item}</p> ) 
+
+function addItem() {
+const newText = `Thing ${things.length+1}`
+ setThings(prevState => [...prevState,newText])
+  
+}
+
+  return(
+    <div>
+      <button onClick={addItem}>Add item</button>
+      {arrElements}
+    </div>
+  )
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
