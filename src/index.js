@@ -4,9 +4,9 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 
 function App() {
-const [things , setThings] = React.useState( ["Thing1"] )
+const [things , setThings] = React.useState( ["Thing1" ,"Thing2","Thing3"] )
 
-const arrElements = things.map(item => <p key={item}>{item}</p> ) 
+const arrElements = things.map(thing => <p >{thing}</p> ) 
 
 function addItem() {
 const newText = `Thing ${things.length+1}`
@@ -16,7 +16,7 @@ const newText = `Thing ${things.length+1}`
 
   return(
     <div>
-      <button onClick={addItem}>Add item</button>
+      <button  darkMode = {true}  onClick = {addItem}>Add item</button>
       {arrElements}
     </div>
   )
